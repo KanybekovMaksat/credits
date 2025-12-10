@@ -1,0 +1,110 @@
+@use "/src/var.scss";
+
+.card-view-page {
+
+  .asset-balance {
+    .current-balance {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 30px;
+      color: #828282
+    }
+
+    .description {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: baseline;
+
+      .amount {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .fiat-amount {
+        padding-left: 10px;
+        color: #828282;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .card-front {
+    filter: drop-shadow(0 4px 11px var.$cs_gray3);
+    background-image: url("/v2/card-bg.svg");
+    background-size: cover;
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    color: var.$cs_white;
+    font-size: 12px;
+    margin-top: 15px;
+
+    .pan {
+      position: absolute;
+      left: 15px;
+      bottom: 80px;
+      display: flex;
+      justify-items: baseline;
+    }
+
+    .holder {
+      position: absolute;
+      left: 15px;
+      bottom: 55px;
+      display: flex;
+      justify-items: baseline;
+    }
+
+    .expire {
+      position: absolute;
+      left: 15px;
+      bottom: 30px;
+      display: flex;
+      justify-items: baseline;
+    }
+    .cvv {
+      position: absolute;
+      right: 250px;
+      bottom: 30px;
+      display: flex;
+      justify-items: baseline;
+    }
+    .icon {
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+      width: 75px;
+      height: 75px;
+    }
+    .show-hide {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-items: baseline;
+      img{
+        padding-right: 5px;
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    flex-direction: row;
+    padding-top: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .password-modal {
+    .password-validation {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+}

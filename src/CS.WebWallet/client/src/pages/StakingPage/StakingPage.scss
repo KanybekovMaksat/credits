@@ -1,0 +1,111 @@
+@use "./src/var";
+
+.stakings-list {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  li.staking-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid var.$cs_gray5;
+    background-color: var.$cs_white;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    filter: drop-shadow(2px 2px 4px #bdbdbd);
+
+    .stake-icon img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid var.$cs_head;
+    }
+
+    .stake-description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      width: 100%;
+      margin: 0 15px;
+
+      .header-title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .header-description {
+        color: var.$cs_gray3;
+        font-size: 13px;
+      }
+    }
+
+    .stake-action {
+      display: flex;
+      width: 130px;
+      justify-content: end;
+      align-items: center;
+
+      .stake-message {
+        display: flex;
+        font-size: 12px;
+        padding-right: 10px;
+        color: #ffaf60;
+        height: 100%;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.deposits {
+  width: 100%;
+
+  .deposit-item {
+    list-style-type: none;
+    width: 100%;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      border: 1px solid var.$cs_gray5;
+      background-color: var.$cs_white;
+      padding: 16px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      filter: drop-shadow(2px 2px 4px #bdbdbd);
+      cursor: pointer;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: var.$cs_gray6;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        align-items: center;
+        margin-right: 20px;
+      }
+
+      .info-row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+      }
+
+      .with-end {
+        align-items: end;
+        font-size: 14px;
+      }
+    }
+  }
+}

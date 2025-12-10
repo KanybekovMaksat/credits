@@ -1,0 +1,21 @@
+@use "./src/var";
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 5px;
+  color: #a5a5a5;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid var.$cs_gray6;
+
+  &.active {
+    color: white;
+    background-color: var.$cs_blue;
+  }
+}

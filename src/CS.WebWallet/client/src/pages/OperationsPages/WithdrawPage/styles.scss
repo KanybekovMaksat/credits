@@ -1,0 +1,51 @@
+.withdraw-page {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+
+  .withdraw {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 17px 0 17px 24px;
+    margin-top: 7px;
+    box-shadow: 0 0 30px 5px rgba(116, 114, 114, 0.1);
+
+    .first-row {
+      box-sizing: border-box;
+      padding-right: 35px;
+      margin-bottom: 3px;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.01em;
+        color: #3176de;
+      }
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: #828282;
+    }
+
+    .row-divider {
+      margin: 10px 0;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.document_status {
+  &.green {
+    color: green;
+  }
+
+  &.yellow {
+    color: #F2C94C;
+  }
+
+  &.red {
+    color: red;
+  }
+
+  &.gray {
+    color: #828282;
+  }
+}

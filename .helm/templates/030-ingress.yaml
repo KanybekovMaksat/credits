@@ -1,0 +1,73 @@
+{{- $GitVersion := .Capabilities.KubeVersion.GitVersion -}}
+  {{- if semverCompare ">=1.19-0" $GitVersion -}}
+apiVersion: networking.k8s.io/v1
+  {{- else if semverCompare ">=1.14-0" $GitVersion -}}
+apiVersion: networking.k8s.io/v1beta1
+  {{- else -}}
+apiVersion: extensions/v1beta1
+  {{- end }}
+kind: Ingress
+metadata:
+  name:  {{ .Chart.Name }}-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: 100m
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "900"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "900"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "900"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/affinity: cookie
+    nginx.ingress.kubernetes.io/session-cookie-hash: sha1
+    nginx.ingress.kubernetes.io/session-cookie-name: REALTIMESERVERID
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-Forwarded-For $http_x_forwarded_for";
+spec:
+  tls:
+  - hosts:
+    - {{ $.Values.global.env_url }}
+  {{ if or (eq .Values.global.env "prod") (eq .Values.global.env "prod-gke") }}
+    - web.credits.com
+    - personal.credits.com
+  {{ end }}
+    secretName: cf-origin-server-tls
+  rules:
+  - host: {{ $.Values.global.env_url }}
+    http:
+      paths:
+      {{- range .Values.ingress.rules }}
+      - path: {{ .ingressPath }}
+        {{ if semverCompare ">=1.19-0" $GitVersion -}}
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ $.Chart.Name }}-service
+            port:
+              name: http
+        {{- else -}} 
+        backend:
+          serviceName:  {{ $.Chart.Name }}-service
+          servicePort: {{ .servicePort }}
+        {{- end }}
+      {{- end }}
+  {{ if or (eq .Values.global.env "prod") (eq .Values.global.env "prod-gke") }}
+  - host: web.credits.com
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ $.Chart.Name }}-service
+            port:
+              name: http
+  - host: personal.credits.com
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: {{ $.Chart.Name }}-service
+            port:
+              name: http      
+    {{ end }}

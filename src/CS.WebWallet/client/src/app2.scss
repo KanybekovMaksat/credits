@@ -1,0 +1,213 @@
+@use "var.scss";
+
+.txt-bold-18 {
+  font-size: 18px;
+  font-weight: 500;
+  user-select: none;
+  color: var.$text_gray;
+}
+
+.txt-bold-16 {
+  font-size: 16px;
+  font-weight: 500;
+  user-select: none;
+  color: var.$text_gray;
+}
+
+.txt-bold-14 {
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+  color: var.$text_gray;
+}
+
+.cs_input {
+  width: 100%;
+  height: 53px;
+  padding-right: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-indent: 14px;
+  font-size: 15px;
+
+  &::placeholder {
+    font-size: 15px;
+    text-indent: 14px;
+  }
+  &:focus,
+  &:focus,
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background-color: var.$cs_gray5;
+    color: var.$cs_gray2;
+  }
+  &.error {
+    border: 1px solid red;
+  }
+  &:hover {
+    border: 1px solid var.$cs_blue;
+  }
+  &[type="date"] {
+    text-indent: 6px;
+  }
+}
+
+.field_validation_error {
+  font-size: 12px;
+  color: var.$cs_warning_color;
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+}
+
+.error_div {
+  font-size: 12px;
+  color: var.$cs_warning_color !important;
+  bottom: 3px;
+  right: 3px;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0 0 1px;
+  .display_error {
+    font-size: 12px;
+    color: var.$cs_warning_color;
+  }
+  .display_warning {
+    font-size: 12px;
+    color: var.$cs_gray2;
+  }
+}
+
+.cs_button_transparent {
+  color: var.$cs_blue_light;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  height: 50px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+}
+
+.app-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.page-subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color: var.$cs_gray2;
+}
+
+.page-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.form-card {
+  border-radius: 10px;
+  box-shadow: var.$cs_box-shadow;
+  box-sizing: border-box;
+  background-color: white;
+  padding: 25px 25px;
+  width: 100%;
+
+  .input-definition {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-weight: 600;
+  }
+
+  .form-description {
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: var.$cs_gray2;
+
+    span:not(:last-child) {
+      padding-bottom: 5px;
+    }
+    .form-error {
+      color: var.$cs_warning_color;
+    }
+  }
+
+  .form-buttons {
+    display: flex;
+    padding-top: 15px;
+  }
+}
+
+.crypto-amount,
+.account-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  .cs_number {
+    text-align: right;
+  }
+}
+
+.account-requisites {
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  font-weight: 500;
+  font-size: 24px;
+  color: #000000;
+}
+
+.modal-description {
+  padding-top: 23px;
+  color: #828282;
+  letter-spacing: 0.02em;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-thumb:active {
+  background: rgba(0, 0, 0, 0.9);
+}

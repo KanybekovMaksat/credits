@@ -1,0 +1,166 @@
+@use "src/var.scss";
+
+.side_menu_mobile {
+  display: none;
+}
+
+.side_menu {
+  width: 240px;
+  background: white;
+  border-radius: 10px 0px 0px 0px;
+  box-sizing: border-box;
+
+  .menu_wrapper {
+    position: sticky;
+    top: 180px;
+    left: 0;
+
+    ul {
+      list-style-type: none;
+      padding: 0 10px;
+
+      a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #4b4b4b;
+      }
+    }
+  }
+
+  .logo {
+    border: none;
+    background: inherit;
+    height: 70px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .menu_item {
+    width: 192px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .container {
+      width: 100%;
+      height: 41px;
+      display: flex;
+      align-items: center;
+      border-radius: inherit;
+      padding-left: 15px;
+      padding-right: 10px;
+      box-sizing: border-box;
+      justify-content: space-between;
+
+      .menu_item_title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .arrow_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.sub {
+        width: 100%;
+        height: 25px;
+        padding-left: 60px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 15px;
+        color: #4b4b4b;
+
+        &.active,
+        &:hover {
+          background: white;
+          color: var.$cs_blue;
+        }
+      }
+
+      &.active {
+        background: #eaebed;
+        color: var.$cs_blue;
+
+        svg {
+          rect,
+          path,
+          circle {
+            stroke: var.$cs_blue;
+          }
+        }
+      }
+
+      &:hover {
+        color: var.$cs_blue;
+
+        svg {
+          rect,
+          path,
+          circle {
+            stroke: var.$cs_blue;
+          }
+        }
+      }
+    }
+  }
+
+  .sub_menu {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: open 0.2s ease-out forwards;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+
+      li {
+        margin: 0;
+      }
+    }
+
+    &.closing {
+      animation: close 0.2s ease-out forwards;
+
+      ul {
+        gap: 0;
+        transition: gap 0.2s ease-out;
+      }
+    }
+  }
+
+  @keyframes open {
+    from {
+      height: 0;
+      padding: 0;
+    }
+
+    to {
+      height: 110px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+  }
+  @keyframes close {
+    from {
+      height: 110px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+
+    to {
+      height: 0;
+      padding: 0;
+    }
+  }
+}

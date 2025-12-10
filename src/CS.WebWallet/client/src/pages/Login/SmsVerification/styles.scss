@@ -1,0 +1,79 @@
+.sms-verification {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    padding-bottom: 30px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    color: #000000;
+  }
+  span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: #828282;
+  }
+  .sms-code-input {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    .sms-code-login {
+      box-sizing: border-box;
+      height: 50px;
+      background: #f8f8f8;
+      border: 1px solid #d9d6d6;
+      border-radius: 8px;
+      width: 100%;
+      outline: none;
+      padding: 0 15px;
+      margin: 15px 0px;
+      font-size: 18px;
+      :hover {
+        border: 1px solid #367edb;
+      }
+    }
+  }
+
+  .link-button {
+    width: 100%;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: #446dfd;
+    background-color: white;
+    border: 0;
+    margin-top: 24px;
+    cursor: pointer;
+  }
+  .link-button:hover {
+    opacity: 0.7;
+  }
+  .seconds {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: #333333;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  .error {
+    height: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
+    color: #ff0000;
+  }
+}

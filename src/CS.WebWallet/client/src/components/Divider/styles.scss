@@ -1,0 +1,23 @@
+.row-divider {
+  display: flex;
+  clear: both;
+  width: 100%;
+  border: 1px solid #E0E0E0;
+}
+
+.top-up-modal-divider {
+  display: flex;
+  clear: both;
+  width: 276px;
+  height: 0;
+  border-bottom: 1px solid #E0E0E0;
+  margin: 10px 0 10px 73px;
+}
+
+.cs_divider {
+  display: flex;
+  clear: both;
+  height: 1px;
+  background: #ECECEC;
+  margin-left: auto;
+}

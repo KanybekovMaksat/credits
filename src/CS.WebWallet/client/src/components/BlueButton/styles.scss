@@ -1,0 +1,40 @@
+@use "./src/var";
+
+.blue-button {
+  background: #3176DE;
+  color: white;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+
+  .loading_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 5%;
+
+    svg {
+      opacity: 0.7;
+    }
+  }
+}
+
+.blue-button:hover {
+  opacity: 0.8;
+}
+
+.blue-button[disabled] {
+  background: #C4C4C4;
+  color: #333333;
+}
+
+.blue-button[disabled]:hover {
+  opacity: 1;
+}

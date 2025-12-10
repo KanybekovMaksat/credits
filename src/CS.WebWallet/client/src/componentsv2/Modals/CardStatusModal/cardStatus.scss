@@ -1,0 +1,34 @@
+.card_status_modal {
+
+    display: flex;
+    flex-direction: column;
+    width: 412px;
+    background: #FFFFFF;
+    border-radius: 14px;
+    box-sizing: border-box;
+    padding: 45px 35px;
+
+    .status-description {
+        padding-top: 23px;
+        color: #828282;
+        letter-spacing: 0.02em;
+        font-size: 16px;
+        line-height: 130%;
+        display: flex;
+        flex-direction: column;
+        .card_status {
+            padding-top: 15px;
+        }
+    }
+
+    input {
+        width: 150px;
+        height: 53px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-sizing: border-box;
+        text-indent: 14px;
+        font-size: 15px;
+        margin: 15px 0 15px 0;
+    }
+}

@@ -1,0 +1,33 @@
+@use "./src/var";
+
+.wallet-qr-from {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+
+  align-items: center;
+  justify-content: center;
+
+  .public-address-actions {
+    display: flex;
+    margin-bottom: 10px;
+
+    .public-address {
+      font-weight: 600;
+    }
+
+    button {
+      margin-bottom: -10px;
+    }
+  }
+
+  .qr {
+    width: 210px;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var.$cs_gray5;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}

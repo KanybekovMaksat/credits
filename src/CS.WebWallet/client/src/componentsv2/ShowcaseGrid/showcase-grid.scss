@@ -1,0 +1,82 @@
+@use "src/var.scss";
+
+.showcase_grid {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  width: 100%;
+  background: #ffffff;
+
+  border-radius: 10px;
+  box-shadow: var.$cs_box-shadow;
+  box-sizing: border-box;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+    .action-message {
+      display: flex;
+      font-size: 14px;
+      padding-right: 10px;
+      color: #ffaf60;
+      height: 100%;
+      align-items: center;
+    }
+
+    .blue-filled-button {
+      width: 100px;
+      font-size: 14px;
+    }
+  }
+}
+
+.showcase_kyc {
+  display: flex;
+  flex-direction: column;
+  width: 412px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-sizing: border-box;
+  padding: 45px 35px;
+
+  .description {
+    padding: 20px 0;
+    color: #828282;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    line-height: 130%;
+  }
+}
+.eula_modal {
+  display: flex;
+  flex-direction: column;
+  width: 412px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-sizing: border-box;
+  padding: 45px 35px;
+  gap: 10px;
+}
+
+.showcase {
+  display: flex;
+  gap: 7px;
+  margin-left: 23px;
+  flex-direction: column;
+  width: 100%;
+
+  .showcase_title {
+    font-weight: 600;
+    font-size: 18px;
+    color: var.$cs_blue;
+  }
+}

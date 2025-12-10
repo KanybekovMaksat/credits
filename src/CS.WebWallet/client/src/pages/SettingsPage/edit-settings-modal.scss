@@ -1,0 +1,44 @@
+@use "../../var";
+
+.edit_settings_modal {
+  background-color: var.$cs_white;
+  border-radius: 15px;
+  box-shadow: var.$cs_box-shadow;
+  box-sizing: border-box;
+  padding: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  width: 412px;
+
+  .description {
+    color: var.$cs_gray3;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 10px;
+  }
+  .new_number {
+    padding: 10px 0 5px 0;
+    color: #000000;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    line-height: 130%;
+    margin-bottom: 10px;
+  }
+
+  .code-input {
+    box-sizing: border-box;
+    height: 50px;
+    background: #f8f8f8;
+    border: 1px solid #d9d6d6;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    margin: 15px 0px;
+    font-size: 18px;
+    :hover {
+      border: 1px solid #367edb;
+    }
+  }
+}

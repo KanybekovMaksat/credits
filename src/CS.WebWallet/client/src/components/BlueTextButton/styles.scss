@@ -1,0 +1,32 @@
+.blue-text-button {
+  border: none;
+  background-color: inherit;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3176DE;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.bordered {
+    border: 1px solid #446DFA;
+    border-radius: 8px;
+  }
+}
+
+.blue-text-button:hover {
+  opacity: 0.8;
+}
+
+.blue-text-button[disabled] {
+  color: #939297;
+  opacity: 1;
+
+  &.bordered {
+    border: 1px solid #939297;
+    border-radius: 8px;
+  }
+}

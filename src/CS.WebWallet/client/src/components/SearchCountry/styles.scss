@@ -1,0 +1,61 @@
+.search {
+  width: 100%;
+  height: 50px;
+  background: #FFF;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 13px 0 16px;
+  justify-content: space-between;
+
+
+  .input-country-search {
+    height: 47px;
+    border-radius: 8px;
+    border: 0;
+    box-sizing: border-box;
+    background: inherit;
+    margin-left: 8px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    width: 80%;
+    &::placeholder {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 18px;
+    }
+    &:focus{
+      outline: none;
+    }
+    &:hover {
+      outline: none;
+      border: 0;
+    }
+  }
+
+
+
+  button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: inherit;
+  }
+
+  .cancel_button {
+    cursor: pointer;
+  }
+}
+
+.search-personal {
+  height: 35px;
+  .input-cc-search {
+    height: 35px;
+  }
+
+}

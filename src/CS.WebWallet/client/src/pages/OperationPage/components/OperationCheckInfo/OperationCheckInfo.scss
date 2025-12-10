@@ -1,0 +1,31 @@
+@use "./src/var";
+
+.operation-header {
+  padding-left: 3px;
+  display: flex;
+  justify-content: space-between;
+  color: var.$text_gray;
+  line-height: 25px;
+}
+
+.operation-info {
+  background-color: #f3f3f3;
+  padding: 17px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  table {
+    font-size: 14px;
+    line-height: 20px;
+
+    tr {
+      td:first-child {
+        color: var.$cs_gray3;
+      }
+      td:last-child {
+        color: var.$text_gray;
+        font-weight: 700;
+      }
+    }
+  }
+}

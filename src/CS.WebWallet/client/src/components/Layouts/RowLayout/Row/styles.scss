@@ -1,0 +1,20 @@
+.row {
+  display: flex;
+  flex-direction: row;
+
+  &.justify_space_between {
+    justify-content: space-between;
+  }
+
+  &.justify_start {
+    justify-content: start;
+  }
+
+  &.justify_end {
+    justify-content: end;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}

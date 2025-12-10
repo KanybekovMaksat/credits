@@ -1,0 +1,7 @@
+.tests-unit:
+  extends: .tests-unit-dotnet
+
+include:
+  - project: 'infra/ci-cd/templates'
+    ref: 'debug'
+    file: '.ci-cd.include.yml'

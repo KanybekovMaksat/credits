@@ -1,0 +1,93 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-settings-cm
+data:
+  appsettings.json: |
+    {
+      "app": {
+        "cookieDomain": "{{ pluck .Values.global.env .Values.client.cookieDomain | first | default .Values.client.cookieDomain._default }}",
+        "scheme": "{{ pluck .Values.global.env .Values.app.scheme | first | default .Values.app.scheme._default }}",
+        "domain": "{{ pluck .Values.global.env .Values.app.domain | first | default .Values.app.domain._default }}"
+      },
+      "sumSub": {
+        "apiUrl": "https://api.sumsub.com",
+        "secret": "{{ pluck .Values.global.env .Values.sumSub.secret | first | default .Values.sumSub.secret._default }}",
+        "token": "{{ pluck .Values.global.env .Values.sumSub.token | first | default .Values.sumSub.token._default }}"
+      },
+      "apis": {
+        "identity": "http://identity-service",
+        "references": "http://references-service",
+        "exchange": "http://exchange-service",
+        "ledger": "http://ledger-service",
+        "contracts": "http://contracts-service",
+        "orchestrator": "http://orchestrator-service",
+        "antifraud": "http://antifraud-service",
+        "healthz": "http://healthz-service",
+        "loyalty": "http://loyalty-service",
+        "banking": "http://banking-service"
+      },
+      "blobStore": {
+        "enabled": {{ pluck .Values.global.env .Values.gcs.enabled | first | default .Values.gcs.enabled._default }},
+        "bucketName": "{{ pluck .Values.global.env .Values.gcs.bucketName | first | default .Values.gcs.bucketName._default }}",
+        "cdnUrl": "{{ pluck .Values.global.env .Values.gcs.cdnUrl | first | default .Values.gcs.cdnUrl._default }}",
+        "credentialsPath": "./blob.creds.json"
+      },
+      "redis": {
+        "HostAddresses": [
+          {
+            "host": "{{ pluck .Values.global.env .Values.redis.hostAddr.host | first | default .Values.redis.hostAddr.host._default }}",
+            "port": "{{ pluck .Values.global.env .Values.redis.hostAddr.port | first | default .Values.redis.hostAddr.port._default }}"    
+          }
+        ],
+        "master": "{{ pluck .Values.global.env .Values.redis.master | first | default .Values.redis.master._default }}",
+        "clientName": "",
+        "password": ""
+      },
+      "rabbitMq": {
+        "host": "{{ pluck .Values.global.env .Values.rabbitmq.host | first | default .Values.rabbitmq.host._default }}",
+        "port": 5672,
+        "username": "{{ pluck .Values.global.env .Values.rabbitmq.user | first | default .Values.rabbitmq.user._default }}",
+        "password": "{{ pluck .Values.global.env .Values.rabbitmq.password | first | default .Values.rabbitmq.password._default }}"
+      },
+      "logger": {
+        "minLevel": "warning",
+        "labels": {
+          "application": "credits-app-web-wallet",
+          "environment": "{{ .Values.global.env }}"
+        },
+        "filters": {
+          "enabled": true,
+          "filters": [
+            {
+              "type": "Exclude",
+              "Expression": "SourceContext like 'Microsoft.EntityFrameworkCore%' or SourceContext like 'System.Net.Http.%' or Path like '/healthz%' or RequestPath like '/healthz%'"
+            }
+          ]
+        },
+        "console": {
+          "enabled": true,
+          "format": "json"
+        }
+      },
+      "otel": {
+        "enabled": true,
+        "grpcEnabled": true,
+        "massTransitEnabled": true,
+        "efCoreEnabled": true,
+        "redisEnabled": true,
+        "serviceName": "Web-wallet API",
+        "jaeger": {
+          "enabled": true,
+          "host": "localhost",
+          "port": 6831
+        },
+        "enrichers": [ { "service.env": "{{ .Values.global.env }}" } ],
+        "filters": {
+          "enabled": true,
+          "paths": [ "/healthz" ]
+        }
+      }
+    }
+  blob.creds.json: |
+  {{ pluck .Values.global.env .Values.gcs.key | first | default .Values.gcs.key._default | indent 2 }}

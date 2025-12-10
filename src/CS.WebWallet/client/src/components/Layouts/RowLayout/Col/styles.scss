@@ -1,0 +1,16 @@
+.col {
+  display: flex;
+  flex-direction: column;
+
+  &.justify_space_between {
+    justify-content: space-between;
+  }
+
+  &.justify_start {
+    justify-content: start;
+  }
+
+  &.justify_end {
+    justify-content: end;
+  }
+}

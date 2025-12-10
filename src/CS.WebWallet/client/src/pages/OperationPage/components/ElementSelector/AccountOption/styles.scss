@@ -1,0 +1,81 @@
+@use "./src/var";
+
+.account-option-container {
+  border-bottom: 1px solid red;
+}
+
+.account-option-item {
+  &.selected {
+    margin-top: 0;
+    height: 38px;
+  }
+
+  background-color: inherit;
+  border: 0;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border-radius: 10px;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  hr {
+    color: red;
+  }
+
+  span {
+    margin-left: 0;
+  }
+
+  .account-props {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: flex-start;
+    align-items: start;
+    margin-left: 14px;
+
+    .account-name {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+
+    .sub-amount {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: #737373;
+    }
+
+    @media all and (max-width: 640px) {
+      .account-name {
+        font-size: 12px;
+      }
+      .sub-amount {
+        font-size: 10px;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.option-delimiter {
+  width: 100%;
+  background-color: var.$cs_gray4;
+  height: 1px;
+  margin: 5px 0px;
+
+  content: "eqwe";
+}

@@ -1,0 +1,84 @@
+.selector {
+  width: 100%;
+  .select-country-flag { 
+    min-width: 35px;
+    min-height: 24px;
+    max-width: 35px;
+    max-height: 24px;
+    border-radius: 5px;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    min-width: 119px;
+    border-radius: 8px;
+    border: 1px solid #D9D6D6;
+    background-color: #F8F8F8;
+    box-sizing: border-box;
+    padding: 13px 9px;
+    cursor: pointer;
+     .phone-code{
+      width: 100%;
+      font-size: 18px;
+      white-space: nowrap;
+     }
+     .arrow{
+      padding: 0 5px;
+     }
+
+  }
+  button:hover {
+    border: 1px solid #367EDB;
+  }
+}
+
+.country-options {
+  width: 336px;
+  max-height: 400px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: -50px;
+  position: absolute;
+  z-index: 1;
+  padding: 16px 0;
+
+  .country-search {
+    margin: 15px 16px;
+  }
+
+  .option {
+    max-height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+}
+
+.mini {
+  font-size: 15px !important;
+  .selector {
+    width: 100% !important;
+    height: 35px;
+    button {
+      width: 100% !important;
+      height: 35px;
+    }
+  }
+  .phone-code { visibility: hidden}
+  .country-options {
+    margin-top: -35px !important;
+    width: 360px;
+  }
+
+  .input-cc-search {
+    height: 33px !important;
+    outline: none;
+    &:focus { border: none!important;}
+    &:hover { border: none!important;}
+  }
+}

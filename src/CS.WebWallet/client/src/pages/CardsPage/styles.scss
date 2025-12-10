@@ -1,0 +1,76 @@
+@use "./src/var";
+
+.cards-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+
+  .grid {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 20px 30px;
+    box-shadow: 0 2px 8px rgba(0, 6, 37, 0.14);
+    border-radius: 10px;
+    .card-table {
+      width: 100%;
+      border-spacing: 0;
+
+      th {
+        color: var.$cs_gray3;
+        border-bottom: 1px solid var.$cs_gray4;
+      }
+
+      tr {
+        margin-bottom: 10px;
+      }
+
+      tr:nth-child(2) td {
+        padding-top: 20px;
+      }
+
+      td {
+        &.name_column {
+          color: var.$cs_gray3;
+        }
+        &.verified {
+          color: var.$cs_green;
+        }
+        &.not_verified {
+          color: var.$cs_red;
+        }
+      }
+
+      table,
+      th,
+      td {
+        text-align: center;
+      }
+
+      th,
+      td {
+        padding: 10px 0;
+        border-top-width: 0;
+        border-left-width: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+      }
+
+      .card-info {
+        height: 35px;
+      }
+    }
+    .card-action {
+      border: none;
+      background: none;
+      box-sizing: border-box;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: var.$cs_blue;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@use 'src/var';
+
+.issued-cards-status {
+  .green { color: var.$cs_green}
+  .gray {color: var.$cs_gray4 }
+  .yellow {color: var.$cs_yellow }
+  .red {color: var.$cs_red }
+}

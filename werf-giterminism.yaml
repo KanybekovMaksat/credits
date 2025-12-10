@@ -1,0 +1,13 @@
+giterminismConfigVersion: 1
+cli:
+  allowCustomTags: true  
+config:
+  goTemplateRendering:
+    allowEnvVariables:
+      - UNIT_TESTS
+      - SONAR_TESTS
+      - SONAR_HOST_URL
+      - SONAR_LOGIN
+      - SONAR_TOKEN
+      - APP_ENV
+      - WERF_ENV

@@ -1,0 +1,18 @@
+@use "./../../../var.scss";
+
+.cs_checkbox {
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  color: var.$cs_gray2;
+  padding: 0 5px;
+  text-align: left;
+
+  input{
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+}

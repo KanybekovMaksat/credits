@@ -1,0 +1,78 @@
+@use "../../../var.scss";
+
+.referral-history {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  width: 100%;
+  min-width: fit-content;
+
+  table {
+    width: 100%;
+
+    thead {
+      th {
+        text-align: left;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #828282;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 0;
+
+        &.th_details {
+          display: flex;
+          justify-content: right;
+        }
+      }
+      tr {
+        line-height: 36px;
+      }
+      tr.delimiter {
+        padding: 0 0;
+        height: 1px;
+        td { border-bottom: 1px solid #D6D6D6;}
+      }
+    }
+
+
+    thead.collapsed-head { visibility: collapse }
+    tbody {
+      font-size: 14px;
+        tr{
+          td {
+            box-sizing: border-box;
+            padding: 8px 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &.td_details {
+              display: flex;
+              justify-content: right;
+              button span { line-height: 34px }
+            }
+            &.ref-status {
+              .ref-pending { color:  var.$cs_yellow }
+              .ref-approved { color:  var.$cs_green }
+              .ref-rejected { color:  var.$cs_red }
+            }
+
+          }
+        }
+    }
+  }
+
+  .no-history {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #333333;
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}

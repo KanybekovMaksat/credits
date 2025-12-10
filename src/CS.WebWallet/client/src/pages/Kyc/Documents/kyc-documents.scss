@@ -1,0 +1,89 @@
+@use "src/var";
+
+.kyc-document-page {
+  width: 600px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px 30px;
+  box-sizing: border-box;
+  box-shadow: var.$cs_box-shadow;
+
+  .checkboxes {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+
+    input {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      border: 2px solid #367EDB;
+      box-sizing: border-box;
+      border-radius: 3px;
+      margin-right: 8px;
+
+      &:not(:first-child) {
+        margin-left: 15px;
+      }
+    }
+
+    #passport-checkbox {
+      margin-right: 42px;
+    }
+  }
+
+  .upload-wrapper {
+    width: 80%;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+
+
+    input[type="file"] {
+      display: none;
+    }
+    label {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      span {
+        padding-left: 10px;
+      }
+    }
+
+    .upload-file {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 20px;
+      border: 1px dashed #2169fc;
+      height: 200px;
+      border-radius: 8px;
+      background-color: white;
+      cursor: pointer;
+
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  .single-file {
+    display: flex;
+    justify-content: center;
+  }
+  .double-file {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+}

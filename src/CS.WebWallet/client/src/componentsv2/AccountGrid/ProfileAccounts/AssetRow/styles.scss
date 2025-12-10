@@ -1,0 +1,74 @@
+@use "/src/var";
+
+.asset_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media all and (max-width: 640px) {
+    width: 100%;
+    border: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 0 9px 3px rgba(28, 58, 102, 0.025);
+  }
+
+  .asset_icon {
+    width: 120px;
+    text-align: center;
+
+    img {
+      height: 40px;
+      margin-left: 5px;
+    }
+  }
+
+  .asset {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    margin-left: 23px;
+    width: 100%;
+
+    .asset_ticker {
+      font-weight: 600;
+      font-size: 18px;
+      color: var.$cs_blue;
+    }
+
+    .item-name {
+      font-weight: 400;
+      font-size: 14px;
+      color: var.$cs_gray3;
+    }
+  }
+
+  .asset_amount {
+    display: flex;
+    gap: 7px;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+    flex-wrap: nowrap;
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+    width: 300px;
+
+    .currency_amount {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: var.$cs_gray3;
+    }
+
+    .account_alert_icon {
+      padding-left: 10px;
+    }
+  }
+}

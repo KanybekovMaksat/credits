@@ -1,0 +1,68 @@
+@use "src/var.scss";
+
+.language-dd-wrapper {
+  position: relative;
+  height: 41px;
+  width: 50px;
+  z-index: 7999;
+
+  .dd-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    position:absolute;
+    height: 41px;
+    top: 0;
+    right: 0;
+    .txt-bold-18 {
+      margin-right: 8px;
+    }
+    .dd-header-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-right: 5px;
+      user-select: none
+    }
+
+  }
+
+  .dd-list{
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 0 12px;
+    background: #FFFFFF;
+    box-shadow: 8px 8px 20px 1px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    .dd-list-item {
+      height: 30px;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      background: none;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      &:hover {
+        color : var.$cs_blue;
+      }
+      .flag-invoker{
+
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: #eee;
+          background-position: center center;
+
+           background-size: auto 100%;
+      }
+    }
+
+  }
+}

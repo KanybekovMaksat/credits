@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>true</ImplicitUsings>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CS.AntiFraud.GrpcClient" Version="2.8.0" />
+        <PackageReference Include="CS.Banking.GrpcClient" Version="1.6.1-alpha.0.22" />
+        <PackageReference Include="CS.Contracts.GrpcClient" Version="2.1.3-alpha.0.28" />
+        <PackageReference Include="CS.Contracts.GrpcClient.Kyc" Version="2.1.3-alpha.0.28" />
+        <PackageReference Include="CS.Exchange.Contracts.Events" Version="2.7.1-alpha.0.3" />
+        <PackageReference Include="CS.Exchange.GrpcClient" Version="2.7.1-alpha.0.3" />
+        <PackageReference Include="CS.Exchange.RatesStore" Version="2.7.1-alpha.0.3" />
+        <PackageReference Include="CS.FileService" Version="1.6.0" />
+        <PackageReference Include="cs.healthz.GrpcClient" Version="1.6.1-alpha.0.1" />
+        <PackageReference Include="CS.Identity.Client.Services" Version="2.2.1-alpha.0.26" />
+        <PackageReference Include="CS.Identity.Web.Client" Version="2.2.1-alpha.0.26" />
+        <PackageReference Include="CS.Ledger.Client.MobileApi" Version="40.1.1-alpha.0.14" />
+        <PackageReference Include="CS.Ledger.Stores" Version="40.1.1-alpha.0.14" />
+        <PackageReference Include="CS.Loyalty.GrpcClient" Version="1.5.1-alpha.0.1" />
+        <PackageReference Include="CS.OperationLog.Contract.Events" Version="1.7.1-alpha.0.1" />
+        <PackageReference Include="CS.Orchestrator.GrpcClient" Version="3.1.1-alpha.0.51" />
+        <PackageReference Include="CS.Receipts.Client" Version="1.3.1-alpha.0.2" />
+        <PackageReference Include="CS.References.GrpcClient" Version="1.5.1-alpha.0.9" />
+        <PackageReference Include="CS.Sdk.Commons.Extensions" Version="1.8.0" />
+        <PackageReference Include="CS.Sdk.Commons.GRPC.MediatR" Version="1.8.0" />
+        <PackageReference Include="CS.Sdk.ServiceBus.MassTransit.RabbitMq.DependencyInjection" Version="1.6.0" />
+        <PackageReference Include="CS.SDK.Redis.DistributedCache" Version="1.5.0" />
+        <PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" Version="8.3.0-preview.2.1" />
+        <PackageReference Include="SkiaSharp.HarfBuzz" Version="3.0.0-preview.2.1" />
+        <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="3.0.0-preview.2.1" />
+    </ItemGroup>
+</Project>

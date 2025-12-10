@@ -1,0 +1,89 @@
+{{- $serviceName := (printf "%s-service" .Chart.Name) | quote -}}
+{{- $imageName := (printf "%s" .Chart.Name) | quote -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  annotations:
+    sidecar.jaegertracing.io/inject: "true"
+    rollme: {{ randAlphaNum 5 | quote }}
+    checksum/config: {{ include (print $.Template.BasePath "/040-configmap.yaml") . | sha256sum }}
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      securityContext:
+        runAsUser: 7000
+        runAsGroup: 33
+      volumes:
+      - name: appsettings
+        configMap:
+          name: {{ .Chart.Name }}-settings-cm
+      containers:
+      - env:
+        - name: ASPNETCORE_URLS
+          value: "http://*:8080"
+        - name: ASPNETCORE_ENVIRONMENT
+{{ if or (eq .Values.global.env "prod") (eq .Values.global.env "prod-gke") }}
+          value: Production
+{{ else }}
+          value: Staging
+{{ end }}
+        name: {{ .Chart.Name }}        
+        image: {{ index .Values.werf.image .Chart.Name }}
+        imagePullPolicy: IfNotPresent
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
+        ports:
+          {{- range .Values.containerPorts }}
+          - name: {{ .name }}
+            containerPort: {{ .externalPort }}
+            protocol: {{ .protocol }}
+          {{- end }}
+        volumeMounts:
+        - name: appsettings
+          mountPath: /app/appsettings.json
+          subPath: appsettings.json
+        - name: appsettings
+          mountPath: /app/blob.creds.json
+          subPath: blob.creds.json
+        {{- if .Values.startupProbe.enabled }}
+        startupProbe:
+          httpGet:
+            path: {{ .Values.startupProbe.path }}
+            port: {{ .Values.startupProbe.port }}
+            scheme: {{ .Values.startupProbe.scheme }}
+          failureThreshold: {{ .Values.startupProbe.failureThreshold }}
+          periodSeconds: {{ .Values.startupProbe.periodSeconds }}
+          initialDelaySeconds: {{ .Values.startupProbe.initialDelaySeconds }}
+        {{- end }}
+        {{- if .Values.livenessProbe.enabled }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.livenessProbe.port }}
+            scheme: {{ .Values.livenessProbe.scheme }}
+          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+          failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
+        {{- end }}
+        {{- if .Values.readinessProbe.enabled }}
+        readinessProbe:
+          httpGet:
+            path: {{ .Values.readinessProbe.path }}
+            port: {{ .Values.readinessProbe.port }}
+            scheme: {{ .Values.readinessProbe.scheme }}
+          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+          successThreshold: {{ .Values.readinessProbe.successThreshold }}
+        {{- end }}
+      imagePullSecrets:
+      - name: registrysecret

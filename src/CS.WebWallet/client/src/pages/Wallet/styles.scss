@@ -1,0 +1,35 @@
+@use "./src/var";
+
+.accounts_page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #383636;
+  }
+
+  .accounts_balance_area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .balance {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 31px;
+      color: #000000;
+    }
+
+    .balance_sign {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      color: var.$cs_gray3;
+    }
+  }
+}

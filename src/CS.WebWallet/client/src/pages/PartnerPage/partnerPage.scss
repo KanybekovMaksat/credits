@@ -1,0 +1,32 @@
+@use "../../var.scss";
+
+.partner-page {
+  .share-link {
+    color: var.$cs_blue
+  }
+  .history-filter {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    .cs_input {
+      width: 150px;
+      margin: 0 5px;
+    }
+  }
+  .ref-stat {
+    display: flex;
+    padding: 10px 0;
+    div:not(:last-child) {
+      padding-right: 5px;
+    }
+    .approved {
+      color: var.$cs_green
+    }
+    .pending {
+      color: var.$cs_yellow
+    }
+    .rejected {
+      color: var.$cs_red
+    }
+  }
+}

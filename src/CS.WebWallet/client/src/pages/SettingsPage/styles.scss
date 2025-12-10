@@ -1,0 +1,54 @@
+@use "src/var";
+
+.profile-settings-page {
+  width: 100%;
+  .row-edit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .row-end{
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+  }
+  .phone-area {
+    display: flex;
+    padding-bottom: 10px;
+    position: relative;
+    .simple-input {
+      box-sizing: border-box;
+      height: 50px;
+      background: #f8f8f8;
+      border: 1px solid #d9d6d6;
+      border-radius: 8px;
+      margin-left: 15px;
+      width: 100%;
+      outline: none;
+      padding: 0 8px;
+      font-size: 18px;
+      :hover {
+        border: 1px solid #367edb;
+      }
+    }
+  }
+
+  .status {
+    font-weight: 500;
+    font-size: 16px;
+    width: fit-content;
+    &.approved {
+      color: var.$cs_green;
+    }
+    &.on-review {
+      color: var.$cs_yellow;
+    }
+    &.rejected {
+      color: var.$cs_red;
+    }
+    &.created {
+      color: #bdbdbd;
+    }
+  }
+}

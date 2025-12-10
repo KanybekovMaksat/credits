@@ -1,0 +1,31 @@
+.delete_card_modal {
+  width: 408px;
+  height: 138px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 15px;
+  align-items: center;
+
+  .delete_title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .button_row {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+  }
+}

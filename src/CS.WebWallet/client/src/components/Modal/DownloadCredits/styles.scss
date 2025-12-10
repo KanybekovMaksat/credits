@@ -1,0 +1,85 @@
+.download-credits-modal {
+  width: 375px;
+  height: 531px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 69px 30px 30px 30px;
+
+  .close-icon {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    right: 18px;
+    top: 12px;
+    cursor: pointer;
+    :hover {
+      opacity: 0.8;
+    }
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+  }
+
+  .download-info {
+    width: 282px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin: 8px 0 10px;
+  }
+
+  .store-links-img {
+    margin: 30px 0;
+    width: 100%;
+    justify-content: space-between;
+
+    img {
+      width: 147px;
+
+      &:hover {
+        box-shadow: 0 2px 8px rgba(0, 6, 37, 0.30);
+      }
+    }
+  }
+
+  .store-links-qr {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin: 15px 0 24px;
+
+    img {
+      width: 124px;
+    }
+  }
+
+  .store-links {
+    width: 100%;
+    justify-content: space-between;
+
+    a {
+      width: 164px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      letter-spacing: -0.03em;
+      color: #446DFD;
+      cursor: default;
+      text-decoration: none;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

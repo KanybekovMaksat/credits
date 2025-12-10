@@ -1,0 +1,41 @@
+@use "./src/var";
+
+.operation-code-input {
+  background-color: #f3f3f3;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  p {
+    line-height: 30pt;
+  }
+  .code-area {
+    display: flex;
+    justify-content: center;
+
+    input {
+      text-align: center;
+
+      &.disabled {
+        background-color: #f3f1f1;
+        color: #7e7b7b;
+      }
+    }
+  }
+}
+
+.re-send-hint,
+.re-send-action {
+  text-align: center;
+  font-size: 10pt;
+  color: #7e7b7b;
+  margin-top: 5px;
+}
+
+.re-send-action {
+  cursor: pointer;
+  font-weight: bolder;
+  &:hover {
+    text-decoration: underline;
+  }
+}

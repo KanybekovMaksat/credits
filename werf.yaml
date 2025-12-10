@@ -1,0 +1,98 @@
+project: web-wallet
+configVersion: 1
+
+{{ $_ := env "WERF_ENV" | set . "AppEnv" }}
+---
+# Build
+image: builder
+from: registry.credits.com/credits/base-images/asp-node:1.2
+final: false
+disableGitAfterPatch: true
+{{ include "get application files" . }}
+shell:
+  setup:
+    - |
+      cd /app
+      echo {{ .AppEnv }}
+{{ if or (eq .AppEnv `develop`) (eq .AppEnv `development`) (eq .AppEnv `dev-gke`) }}
+        mv ./src/CS.WebWallet/client/config/env/.env.develop ./src/CS.WebWallet/client/config/env/.env
+{{ else if or (eq .AppEnv `prerelease`) (eq .AppEnv `prerelease-gke`) }}
+        mv ./src/CS.WebWallet/client/config/env/.env.prerelease ./src/CS.WebWallet/client/config/env/.env
+{{ else if or  (eq .AppEnv `cs`) (eq .AppEnv `prod`) (eq .AppEnv `gke`) (eq .AppEnv `release`) (eq .AppEnv `prod-gke`) }}
+        mv ./src/CS.WebWallet/client/config/env/.env.release ./src/CS.WebWallet/client/config/env/.env
+{{ else }}
+        mv ./src/CS.WebWallet/client/config/env/.env.stage ./src/CS.WebWallet/client/config/env/.env
+{{ end }}
+      cat ./src/CS.WebWallet/client/config/env/.env
+      dotnet publish ./src/CS.WebWallet -c release --runtime linux-x64 -o out
+
+---
+# unit-tests
+{{ if eq (env "UNIT_TESTS") "yes" }}
+image: unit-tests
+from: mcr.microsoft.com/dotnet/sdk:9.0
+{{ include "get application files" . }}
+shell:
+  setup:
+    - |
+      cd /app
+      dotnet test -c Release --logger:"trx%3BLogFileName=unitTests.trx" --logger:"html%3BLogFileName=unitTests.html" --results-directory ./artifacts/tests/report
+{{ end }}
+
+---
+# sonar-tests
+{{ if eq (env "SONAR_TESTS") "yes" }}
+image: sonar-tests
+from: mcr.microsoft.com/dotnet/sdk:9.0
+final: false
+{{ include "get application files" . }}
+shell:
+  install:
+    - |
+      apt-get update
+      DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends openjdk-8-jre-headless
+  setup:
+    - |
+      export PATH="$PATH:/root/.dotnet/tools"
+      export SONAR_HOST="{{ env "SONAR_HOST_URL" }}"
+      export SONAR_TOKEN="{{ env "SONAR_LOGIN" }}"
+      dotnet tool install --global dotnet-sonarscanner
+      cd /app
+      dotnet sonarscanner begin /k:"web-wallet" /d:sonar.host.url="${SONAR_HOST}" /d:sonar.login="${SONAR_TOKEN}"
+      dotnet build ./src/CS.WebWallet -c Release --runtime linux-x64
+      dotnet sonarscanner end /d:sonar.login="${SONAR_TOKEN}"
+{{ end }}
+
+---
+# Runtime
+image: web-wallet
+from: registry.credits.com/credits/base-images/aspnet-gdi:1.4
+import:
+  - image: builder       
+    add: /app/out/
+    to: /app
+    after: setup
+    owner: www-data
+    group: www-data
+shell:
+  beforeSetup:
+    - id -u www-data >/dev/null 2>&1 || useradd -m -d /app -u 7000 -s /bin/bash www-data
+imageSpec:
+  config:
+    workingDir: /app
+    user: www-data
+    entrypoint: ["dotnet", "CS.WebWallet.dll"]
+
+# Includes
+{{- define "get application files" -}}
+git:
+- add: /
+  to: /app
+  excludePaths:
+  - werf.yaml
+  - .helm
+  stageDependencies:
+    setup:
+      - "**/*"
+{{ end }}
+        

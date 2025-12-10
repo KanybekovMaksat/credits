@@ -1,0 +1,35 @@
+@use "src/var.scss";
+
+.layout-comments-area {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  box-sizing: border-box;
+  background: var.$cs_white;
+  border-radius: 15px;
+  padding: 15px;
+  align-self: start;
+  gap: 12px;
+  margin-bottom: 33px;
+  box-shadow: var.$cs_box-shadow;
+
+  .layout-comment {
+    width: 100%;
+    box-sizing: border-box;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.01em;
+    color: var.$cs_red;
+
+    &.pending {
+      color: var.$cs_yellow;
+    }
+
+    a {
+      color: var.$cs_blue;
+      text-decoration: none;
+    }
+  }
+}

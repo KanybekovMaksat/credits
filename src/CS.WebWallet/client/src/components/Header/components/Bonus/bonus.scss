@@ -1,0 +1,9 @@
+@use "./src/var";
+
+.bonus-header {
+  color: var.$cs_head;
+
+  @media all and (max-width: 640px) {
+    display: none;
+  }
+}

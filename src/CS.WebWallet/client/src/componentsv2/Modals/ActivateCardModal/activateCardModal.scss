@@ -1,0 +1,27 @@
+.activate-card-modal {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-sizing: border-box;
+  padding: 45px 35px;
+
+  .activate-actions{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .code-input{
+    display: flex;
+    justify-items: center;
+    padding-top: 15px;
+    width: 100%;
+    justify-content: center;
+    .cs_input {
+      width: 200px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.white-button {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 13px;
+  background: #ffffff;
+  outline: none;
+  border-radius: 10px;
+  color: #3176de;
+  cursor: pointer;
+  border: 1px solid #2169fc;
+  gap: 10px;
+
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .button-icon {
+    justify-content: center;
+  }
+
+  .white-button-text {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

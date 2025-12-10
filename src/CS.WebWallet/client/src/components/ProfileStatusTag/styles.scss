@@ -1,0 +1,25 @@
+@use "src/var.scss";
+
+.profile-status {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: right;
+  .status {
+    font-weight: 500;
+    font-size: 16px;
+    width: fit-content;
+    &.approved {
+      color: var.$cs_green;
+    }
+    &.on-review {
+      color: var.$cs_yellow;
+    }
+    &.rejected {
+      color: var.$cs_red;
+    }
+    &.created {
+      color: #BDBDBD;
+    }
+  }
+}

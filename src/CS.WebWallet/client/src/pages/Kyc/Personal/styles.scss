@@ -1,0 +1,15 @@
+@use "src/var";
+
+.personal-information {
+  width: 600px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px 30px;
+  box-sizing: border-box;
+  box-shadow: var.$cs_box-shadow;
+
+  .button-wrapper {
+    display: flex;
+    padding-top: 15px;
+  }
+}

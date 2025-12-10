@@ -1,0 +1,15 @@
+@use "src/var.scss";
+
+.stage-comment {
+  align-self: center;
+  text-align: left;
+  width: 100%;
+  height: 30px;
+
+  .comment {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var.$cs_red;
+  }
+}

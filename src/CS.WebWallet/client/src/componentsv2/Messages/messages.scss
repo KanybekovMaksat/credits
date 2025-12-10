@@ -1,0 +1,12 @@
+@use "./src/var";
+
+.message-row {
+  background: var.$cs_gray6;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  margin-bottom: 10px;
+  width: 100%;
+  min-width: fit-content;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
+}

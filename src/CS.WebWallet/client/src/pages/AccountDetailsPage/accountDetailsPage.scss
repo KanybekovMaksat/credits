@@ -1,0 +1,85 @@
+.account-view-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .asset-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    .asset-name {
+      display: flex;
+      flex-direction: row;
+      height: 85px;
+
+      .right-side {
+        padding-left: 20px;
+        .names{
+          height: 55px;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          .ticker{
+            font-weight: 700;
+            font-size: 30px;
+          }
+          .full-name {
+            padding-left: 15px;
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+        .external-key{
+          font-size: 14px;
+          color: #828282
+        }
+      }
+    }
+    .asset-name-divider {
+      border-bottom:1px solid #CDCACA ;
+    }
+    .current-balance{
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 30px;
+      color: #828282
+    }
+    .account-alert{
+      background-color: #FFADAD;
+      padding: 20px 20px;
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .description {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: baseline;
+      .amount {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .fiat-amount {
+        padding-left: 10px;
+        color: #828282;
+        font-size: 18px;
+      }
+    }
+  }
+  .asset-actions {
+    display: flex;
+    flex-direction: row;
+    padding-top: 25px;
+    flex-wrap: wrap;
+    gap: 10px;
+
+  }
+
+
+}

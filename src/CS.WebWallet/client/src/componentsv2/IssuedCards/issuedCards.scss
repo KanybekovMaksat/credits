@@ -1,0 +1,78 @@
+@use "/src/var";
+
+.issued-cards {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  min-width: 640px;
+  background: #FFFFFF;
+  border: 1px solid #E8E6E6;
+  border-radius: 10px;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  margin-top: 20px;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      .asset_row {
+        display: flex;
+        box-sizing: border-box;
+        padding: 20px 20px;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 0 9px 3px rgba(28, 58, 102, 0.025);
+        }
+
+        .asset_icon {
+          width: 40px;
+          height: 40px;
+          margin-left: 5px;
+        }
+
+        .asset {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          margin-left: 23px;
+
+          .asset_ticker {
+            font-weight: 600;
+            font-size: 18px;
+            color: var.$cs_blue;
+          }
+
+          .asset_name {
+            font-weight: 400;
+            font-size: 14px;
+            color: #292929;
+          }
+        }
+
+        .asset_amount {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 22px;
+          color: #000000;
+        }
+
+        .currency_amount {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: #9E9A9A;
+          margin-left: 28px;
+        }
+
+        .account_alert_icon {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}

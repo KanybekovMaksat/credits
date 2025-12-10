@@ -1,0 +1,15 @@
+.input_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
+  position: relative;
+  .label {
+    width: 40%;
+    padding-right: 10px;
+  }
+  .input_children {
+    width: 100%;
+    position: relative;
+  }
+}

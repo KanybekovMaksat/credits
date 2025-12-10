@@ -1,0 +1,21 @@
+.phone-set-area {
+  display: flex;
+
+  .simple-input {
+    box-sizing: border-box;
+    height: 50px;
+    background: #f8f8f8;
+    border: 1px solid #d9d6d6;
+    border-radius: 8px;
+    margin-left: 15px;
+    width: 100%;
+    outline: none;
+    padding: 0 8px;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    :hover {
+      border: 1px solid #367edb;
+    }
+  }
+}

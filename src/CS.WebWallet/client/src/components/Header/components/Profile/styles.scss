@@ -1,0 +1,91 @@
+@use "src/var.scss";
+
+.profile-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  .profile-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+
+    .user_name {
+      display: flex;
+      height: 40px;
+      gap: 2px;
+
+      .badge_wrapper {
+        height: 100%;
+
+        svg {
+          width: 9px;
+          height: 9px;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-profile {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  z-index: 8000;
+  background-color: white;
+  box-shadow: var.$cs_box-shadow;
+  padding: 15px 0;
+  border-radius: 5px;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+
+  .logout_button {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    cursor: pointer;
+  }
+  .logout_button:hover {
+    opacity: 0.7;
+  }
+}
+
+.logout_confirmation {
+  width: 400px;
+  height: 150px;
+  background: white;
+  box-sizing: border-box;
+  padding: 24px 12px 24px 12px;
+  border-radius: 10px;
+
+  .title {
+    font-weight: 550;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .divider {
+    border-bottom: 2px solid #e0e0e0;
+    margin: 20px 0;
+  }
+
+  .buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.header-avatar {
+  width: 41;
+  height: 41;
+  border-radius: 50%;
+}

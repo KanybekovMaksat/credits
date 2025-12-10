@@ -1,0 +1,50 @@
+@use "./src/var";
+
+.options-swap {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 20;
+    left: 291px;
+    top: -20px;
+    font-weight: 700;
+    color: var.$cs_blue;
+    border: 1px solid var.$cs_blue_light;
+    border-radius: 5px;
+    background-color: var.$cs_white;
+    background-image: url("/icons/swap.png");
+    background-size: 80%;
+    background-position: 50%;
+    filter: drop-shadow(1px 1px 2px #ededed);
+    opacity: 0.9;
+    content: "";
+
+    &:hover {
+      background-color: red;
+      border-color: red;
+    }
+
+    @media all and (max-width: 640px) {
+      left: calc(50% - 15px);
+    }
+  }
+}
+
+.sub-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  span {
+    color: var.$cs_blue;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

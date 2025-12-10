@@ -1,0 +1,55 @@
+.country-option {
+  cursor: pointer;
+  width: 100%;
+  height: 38px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  img {
+    min-width: 35px;
+    min-height: 24px;
+    max-width: 35px;
+    max-height: 24px;
+    border-radius: 5px;
+    margin-left: 16px;
+  }
+  .country-name {
+    width: 100%;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 13px;
+    .english{
+      font-size: 12px;
+      line-height: 15px;
+    }
+    .native {
+      font-size: 10px;
+      line-height: 12px;
+      color: #7B7B7B;
+    }
+  }
+  .phone-code {
+    width: 80px;
+    border: 0;
+    font-size: 18px;
+    line-height: 18px;
+    color: #4F4F4F;
+    background: #FFFFFF;
+    text-align: right;
+    margin-right: 16px;
+  }
+}
+.country-option:hover {
+  background: #F2F2F2;
+  color: #367EDB;
+  .phone-code {
+    background: #F2F2F2;
+  }
+}

@@ -1,0 +1,156 @@
+@use "/src/var.scss";
+
+.all_history_cards {
+  width: 100%;
+  min-width: max-content;
+}
+
+.history-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 15px 15px;
+  width: 100%;
+  min-width: fit-content;
+  box-shadow: var.$cs_box-shadow;
+
+  .day {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #949494;
+  }
+
+  .titles-table {
+    margin-top: 10px;
+  }
+
+  .gray {
+    color: #828282;
+  }
+
+  table {
+    width: 100%;
+
+    thead {
+      th {
+        text-align: left;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #828282;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 0;
+
+        &.th_details {
+          display: flex;
+          justify-content: right;
+        }
+      }
+      tr {
+        line-height: 36px;
+      }
+    }
+
+    thead.thead_wallet {
+      th {
+        font-size: 12px;
+        color: #b4b4b4;
+        font-weight: 400;
+        text-align: center;
+
+        &.time {
+          width: 45px;
+        }
+
+        &.amount {
+          width: 100%;
+          width: 220px;
+        }
+        &.type {
+          width: 90px;
+          text-align: center;
+        }
+
+        &.transaction_status {
+          width: 90px;
+        }
+
+        &.details {
+          width: 45px;
+        }
+
+        @media all and (max-width: 640px) {
+          &.time {
+            width: 45px;
+          }
+          &.amount {
+            width: 120px;
+          }
+
+          &.transaction_status {
+            display: none;
+          }
+        }
+      }
+    }
+
+    thead.collapsed-head {
+      visibility: collapse;
+    }
+    tbody {
+      font-size: 14px;
+      tr {
+        td {
+          box-sizing: border-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          padding: 0px 5px;
+
+          &.transaction_status,
+          &.type,
+          &.amount,
+          &.time {
+            text-align: center;
+            padding-right: 0px;
+          }
+
+          &.td_details {
+            display: flex;
+            justify-content: right;
+
+            button span {
+              line-height: 34px;
+            }
+          }
+
+          @media all and (max-width: 640px) {
+            &.transaction_status {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .no-transactions {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    color: #333333;
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
