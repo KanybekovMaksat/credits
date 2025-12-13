@@ -1,156 +1,217 @@
-@use "./src/var";
+@use "../../var.scss";
 
 .login {
   background: #ffffff;
-  border-radius: 10px;
-  margin: 30px;
-  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  gap: 50px;
+  min-height: 100vh;
+  padding: 40px 20px;
 
-  input[type="text"] {
-    width: 100%;
+  .account-type-tabs {
+    display: flex;
+    min-width: 300px;
+    gap: 12px;
+    margin-bottom: 30px;
+
+    .account-tab {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s;
+      border: none;
+      background: none;
+      color: gray;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        border-color: gray;
+      }
+
+      &.active {
+        background: rgb(243, 243, 243);
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+        color: black;
+
+        svg {
+          color: black;
+        }
+      }
+    }
   }
 
   .login-form {
-    width: 380px;
+    width: 400px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 16px 1px rgba(34, 60, 80, 0.2);
 
-    @media all and (max-width: 640px) {
-      margin: 10px;
-      width: 320px;
-    }
-
-    h1 {
-      padding-bottom: 30px;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 32px;
+    .signup-title {
+      text-align: center;
+      font-weight: 700;
+      font-size: 28px;
       color: #000000;
+      margin: 0 0 30px 0;
     }
 
-    .phone-form {
+    .signup-form {
       width: 100%;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 
-      .captcha {
+      .email-input-wrapper {
+        position: relative;
+        width: 100%;
+
+        .email-input {
+          width: 100%;
+          height: 50px;
+          padding: 0 16px;
+          border: 1px solid #d9d6d6;
+          border-radius: 8px;
+          font-size: 16px;
+          outline: none;
+          box-sizing: border-box;
+          background: #ffffff;
+
+          &::placeholder {
+            color: #999999;
+          }
+
+          &:focus {
+            border-color: #367edb;
+          }
+
+          &.error {
+            border-color: #d74343;
+          }
+        }
+
+        .email-error {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #d74343;
+        }
+      }
+
+      .agree-area {
+        margin: 10px 0;
+      }
+
+      .login-link-button {
+        width: 100%;
+        height: 44px;
+        background: #f5f5f5;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        color: #333333;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background: #e8e8e8;
+        }
+      }
+
+      .divider {
         display: flex;
-        flex-direction: column;
-        align-content: center;
         align-items: center;
-        padding: 15px 0;
+        text-align: center;
+        color: #999999;
+        font-size: 14px;
+
+        &::before,
+        &::after {
+          content: "";
+          flex: 1;
+          border-bottom: 1px solid #e0e0e0;
+        }
+
+        &::before {
+          margin-right: 16px;
+        }
+
+        &::after {
+          margin-left: 16px;
+        }
+      }
+
+      .social-login {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+
+        .social-button {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          border: 1px solid #e0e0e0;
+          background: #ffffff;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s;
+
+          &:hover {
+            border-color: #367edb;
+            transform: scale(1.05);
+          }
+
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+        }
       }
 
       .field_validation_error {
         margin-top: 10px;
-        position: relative;
-      }
-    }
-
-    .phone-title {
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 16px;
-      color: #333333;
-      padding-bottom: 10px;
-    }
-
-    .phone-area {
-      display: flex;
-
-      .simple-input {
-        box-sizing: border-box;
-        height: 50px;
-        background: #f8f8f8;
-        border: 1px solid #d9d6d6;
-        border-radius: 8px;
-        margin-left: 15px;
-        width: 100%;
-        outline: none;
-        padding: 0 8px;
-        font-size: 18px;
-
-        :hover {
-          border: 1px solid #367edb;
-        }
-      }
-    }
-
-    .agree-area {
-      padding: 15px 0;
-    }
-
-    .signin-selector {
-      margin-top: 5px;
-      margin-bottom: 24px;
-
-      .inner {
-        position: relative;
-        height: auto;
+        font-size: 14px;
+        color: #d74343;
+        text-align: center;
       }
     }
   }
-  
-  .slides {
-    width: 35%;
 
-    @media all and (max-width: 640px) {
-      display: none;
-    }
-    
-    .cs-slide {
-      margin-bottom: 60px;
-      text-align: center; 
-    }
-    
-    img {
-      width: 100%;
-    }
-  }
-}
-
-.login-tabs {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-
-  .login-tab {
-    cursor: pointer;
+  .app-download {
+    display: flex;
     justify-content: center;
-    width: 100%;
-    text-align: center;
+    gap: 12px;
 
-    input[type="radio"] {
-      display: none;
-    }
-
-    input[type="radio"]:checked+label {
-      border-bottom: 2px solid var.$cs_blue;
-    }
-
-    input[type="radio"]+label:hover {
-      border-bottom: 2px solid var.$cs_blue_light;
-    }
-
-    label {
+    .app-store-button,
+    .google-play-button {
       display: block;
+      height: 40px;
       cursor: pointer;
-      border-bottom: 2px solid var.$cs_gray5;
-      width: 100%;
-      padding: 10px 5px;
-      margin-bottom: 10px;
-      font-size: 18px;
-      font-weight: bolder;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        height: 100%;
+        width: auto;
+      }
     }
   }
 }

@@ -5,7 +5,14 @@ import { useTranslation } from "react-i18next";
 import { IMask } from "react-imask";
 import { BlueFilledButton } from "@compv2/Buttons";
 import { InputProps } from "@compv2/Modals/NewCardModal/CardNumberInput";
-import { $login, loginCodeConfirm, resendCode, resetLogin } from "@store/auth";
+import BackArrowIcon from "@components/Icons/BackArrowIcon";
+import {
+  $login,
+  $authData,
+  loginCodeConfirm,
+  resendCode,
+  resetLogin,
+} from "@store/auth";
 
 import "./styles.scss";
 
@@ -23,7 +30,7 @@ const SmsCodeInput: React.FC<InputProps> = (props: InputProps) => {
   return (
     <input
       className="sms-code-login"
-      placeholder={"Code"}
+      placeholder="Enter code"
       ref={myRef}
       onPaste={(e) => {
         const value = e.clipboardData.getData("text").trim();
@@ -49,6 +56,7 @@ export interface SmsVerificationProps {
 
 const SmsVerification: FC<SmsVerificationProps> = ({ method }) => {
   const { loading, me } = useStore($login);
+  const authData = useStore($authData);
   const { t } = useTranslation();
 
   if (me) return <Navigate to={"/accounts"} />;
@@ -58,23 +66,38 @@ const SmsVerification: FC<SmsVerificationProps> = ({ method }) => {
 
   useEffect(() => {
     if (timer > 0) {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         setTimer(timer - 1);
       }, 1000);
-    } else {
-      setTimer(0);
+      return () => clearTimeout(timeout);
     }
   }, [timer]);
 
+  const email = authData?.email || "email address@email.com";
+
+  const handleResend = () => {
+    setTimer(30);
+    resendCode();
+  };
+
   return (
-    <div className="sms-verification wait">
-      <div className="sms-code-input">
-        {method === 1 && (
-          <span className="label">{t("Enter code from SMS")}</span>
-        )}
-        {method === 2 && (
-          <span className="label">{t("Enter code from E-mail")}</span>
-        )}
+    <div className="email-verification">
+      <button
+        type="button"
+        className="back-button"
+        onClick={() => resetLogin()}
+      >
+        <BackArrowIcon />
+        <span>Back</span>
+      </button>
+
+      <h1 className="verification-title">Enter the code from email</h1>
+
+      <p className="verification-subtitle">
+        We sent an mail to the email {email}
+      </p>
+
+      <div className="code-input-wrapper">
         <SmsCodeInput
           onChange={(e) => {
             setCode(e);
@@ -84,34 +107,36 @@ const SmsVerification: FC<SmsVerificationProps> = ({ method }) => {
           }}
         />
       </div>
+
+      <BlueFilledButton
+        type="button"
+        onClick={() => loginCodeConfirm({ code })}
+        text={t("Confirm")}
+        isLoading={loading}
+        disabled={!code || code.length !== 6}
+      />
+
       {timer > 0 ? (
         <>
-          <BlueFilledButton
+          <button
             type="button"
-            onClick={() => loginCodeConfirm({ code })}
-            text={t("send")}
-            isLoading={loading}
-          />
-          <div className="seconds">
-            {t("Resending the code in {{timer}} seconds", { timer: timer })}
-          </div>
+            className="send-again-link"
+            disabled
+            style={{ opacity: 0.5, cursor: "not-allowed" }}
+          >
+            Send again
+          </button>
+          <p className="timer-text">Re-request code later {timer} sec</p>
         </>
       ) : (
-        <BlueFilledButton
+        <button
           type="button"
-          onClick={() => resendCode()}
-          text={t("Send the CODE again")}
-          isLoading={loading}
-        />
+          className="send-again-link"
+          onClick={handleResend}
+        >
+          Send again
+        </button>
       )}
-      <button
-        type="button"
-        className="link-button"
-        onClick={() => resetLogin()}
-      >
-        {method === 1 && t("Change the number")}
-        {method === 2 && t("Change the E-mail")}
-      </button>
     </div>
   );
 };
