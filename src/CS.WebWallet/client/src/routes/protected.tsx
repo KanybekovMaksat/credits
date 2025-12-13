@@ -1,36 +1,37 @@
-import React from "react";
-import { redirect, RouteObject } from "react-router-dom";
-import { setMe } from "@store/auth";
-import Loader from "@components/Loader";
-import ProtectedLayout from "@components/Layouts/ProtectedLayout";
-import Crypto from "../pages/Crypto";
-import Wallet from "../pages/Wallet";
-import AccountDetailsPage from "../pages/AccountDetailsPage";
-import WithdrawPage from "../pages/OperationsPages/WithdrawPage";
-import TransferPage from "../pages/OperationsPages/TransferPage";
-import AllHistoryPage from "../pages/AllHistoryPage";
-import KycSummary from "../pages/Kyc/Summary";
-import KycPersonal from "../pages/Kyc/Personal";
-import KycDocuments from "../pages/Kyc/Documents";
-import KycSelfie from "../pages/Kyc/Selfie";
-import SettingsPage from "../pages/SettingsPage";
-import CardsPage from "../pages/CardsPage";
-import PartnerPage from "../pages/PartnerPage";
-import KycSumsub from "../pages/Kyc/Sumsub/Sumsub";
-import IdentityService from "@services/IdentityService";
-import CardVerificationSuccess from "../pages/CardVerificationSuccess";
-import CardViewPage from "../pages/CardViewPage";
+import React from "react"
+import { redirect, RouteObject } from "react-router-dom"
+import { setMe } from "@store/auth"
+import Loader from "@components/Loader"
+import ProtectedLayout from "@components/Layouts/ProtectedLayout"
+import Crypto from "../pages/Crypto"
+import Wallet from "../pages/Wallet"
+import AccountDetailsPage from "../pages/AccountDetailsPage"
+import WithdrawPage from "../pages/OperationsPages/WithdrawPage"
+import TransferPage from "../pages/OperationsPages/TransferPage"
+import AllHistoryPage from "../pages/AllHistoryPage"
+import KycSummary from "../pages/Kyc/Summary"
+import KycPersonal from "../pages/Kyc/Personal"
+import KycDocuments from "../pages/Kyc/Documents"
+import KycSelfie from "../pages/Kyc/Selfie"
+import SettingsPage from "../pages/SettingsPage"
+import CardsPage from "../pages/CardsPage"
+import PartnerPage from "../pages/PartnerPage"
+import KycSumsub from "../pages/Kyc/Sumsub/Sumsub"
+import IdentityService from "@services/IdentityService"
+import CardVerificationSuccess from "../pages/CardVerificationSuccess"
+import CardViewPage from "../pages/CardViewPage"
 
-import OperationPage from "@pages/OperationPage";
-import TopUp from "@pages/OperationsPages/TopUp";
-import DirectedOperationPage from "@pages/OperationsPages/DirectedOperationPage";
-import { Direction } from "@pages/OperationPage/types";
-import ExchangePage from "@pages/OperationsPages/ExchangePage";
-import SetEmailPage from "@pages/Kyc/SetEmailPage";
-import TariffsPage from "@pages/TariffsPage";
-import StakingPage from "@pages/StakingPage";
-import StakingCalculatorPage from "@pages/StakingPage/StakingCalculatorPage";
-import SetPhonePage from "@pages/Kyc/SetPhonePage";
+import OperationPage from "@pages/OperationPage"
+import TopUp from "@pages/OperationsPages/TopUp"
+import DirectedOperationPage from "@pages/OperationsPages/DirectedOperationPage"
+import { Direction } from "@pages/OperationPage/types"
+import ExchangePage from "@pages/OperationsPages/ExchangePage"
+import SetEmailPage from "@pages/Kyc/SetEmailPage"
+import TariffsPage from "@pages/TariffsPage"
+import StakingPage from "@pages/StakingPage"
+import StakingCalculatorPage from "@pages/StakingPage/StakingCalculatorPage"
+import SetPhonePage from "@pages/Kyc/SetPhonePage"
+import LanguageSwitcher from "@pages/LanguageSwitcher"
 
 const protectedRoutes: RouteObject[] = [
   {
@@ -39,11 +40,11 @@ const protectedRoutes: RouteObject[] = [
     errorElement: <Loader />,
     loader: async () => {
       try {
-        const res = await IdentityService.me();
-        setMe(res?.data ?? null);
-        return true;
+        const res = await IdentityService.me()
+        setMe(res?.data ?? null)
+        return true
       } catch (e) {
-        return redirect("/login");
+        return redirect("/login")
       }
     },
     children: [
@@ -183,7 +184,11 @@ const protectedRoutes: RouteObject[] = [
         path: "staking/:id",
         element: <StakingCalculatorPage />,
       },
+      {
+        path: "language-switcher",
+        element: <LanguageSwitcher />,
+      },
     ],
   },
-];
-export default protectedRoutes;
+]
+export default protectedRoutes

@@ -8,7 +8,8 @@
 }
 
 body {
-  background-color: var.$cs_bg_color;
+  // background-color: var.$cs_bg_color;
+  background: #fff;
   color: #333;
   padding: 0;
   margin: 0;
@@ -34,8 +35,8 @@ body {
   border: 0;
   border-radius: 8px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   font-size: 18px;
   color: #ffffff;
   cursor: pointer;
