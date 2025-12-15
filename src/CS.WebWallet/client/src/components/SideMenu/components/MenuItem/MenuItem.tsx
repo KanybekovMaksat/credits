@@ -10,6 +10,7 @@ export interface MenuItemProps {
   link: string;
   sub?: boolean;
   children?: ReactElement | ReactElement[];
+  defaultExpanded?: boolean;
 }
 
 const MenuItem: React.FC<MenuItemProps> = ({
@@ -18,9 +19,10 @@ const MenuItem: React.FC<MenuItemProps> = ({
   icon,
   children,
   link,
+  defaultExpanded = false,
 }) => {
   const { open } = useStore($sideMenu);
-  const [expanded, setExpanded] = useState<boolean>(false);
+  const [expanded, setExpanded] = useState<boolean>(defaultExpanded);
   const [closing, setClosing] = useState<boolean>(false);
 
   function handleClose() {

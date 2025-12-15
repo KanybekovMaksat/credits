@@ -1,0 +1,148 @@
+.language-page {
+  // width: 100%;
+  max-width: 691px;
+  display: flex;
+  justify-content: center;
+  // padding: 24px 24px 64px;
+  // background: #f7f9fc;
+
+  .page-shell {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.content-wrap {
+  .page-title-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0 4px;
+
+    .action-inner-wrap {
+      padding: 12px 0 13px;
+      width: 48px;
+      .btn.button-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background: #f2f3f5;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.15s ease;
+
+        &:hover {
+          background: #e8ecf2;
+        }
+
+        &:active {
+          transform: translateY(1px);
+        }
+
+        .button-icon {
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+
+    .title-inner-wrap {
+      h1.page-title {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #0f172a;
+        margin: 0 0 4px;
+      }
+
+      p {
+        margin: 0;
+        color: #6b7280;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+.language-card {
+  // background: #fff;
+  background: unset;
+  border-radius: 16px;
+  // box-shadow: 0 6px 20px rgba(17, 24, 39, 0.07);
+  // padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  //
+  border: 1px solid #e1e3e6;
+
+  .language-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 56px 1fr 32px;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: #f6f8fb;
+    }
+
+    &.is-active {
+      .lang-check {
+        visibility: visible;
+        color: #1f6bff;
+      }
+    }
+
+    .lang-flag img {
+      width: 40px;
+      height: 26px;
+      border-radius: 4px;
+      object-fit: cover;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    }
+
+    .lang-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      .lang-name {
+        font-size: 16px;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .lang-native {
+        font-size: 13px;
+        color: #6b7280;
+      }
+    }
+
+    .lang-check {
+      justify-self: end;
+      color: #d1d5db;
+      visibility: hidden;
+    }
+  }
+
+  .language-row + .language-row {
+    border-top: 1px solid #f2f3f5;
+  }
+}

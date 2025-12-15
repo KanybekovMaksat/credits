@@ -1,5 +1,9 @@
 .arrow {
   margin: 0 0px;
+  transition: 0.2s;
+  transition-timing-function: linear;
+    transform: rotate(0deg);
+
 }
 
 .rotation {

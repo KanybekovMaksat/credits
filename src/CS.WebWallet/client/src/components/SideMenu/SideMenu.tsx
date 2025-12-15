@@ -10,7 +10,6 @@ import {
   WalletIcon,
   BitcoinIcon,
   CircleDiagramIcon,
-  ChartIcon,
   CircleClockIcon,
 } from "./components/SideMenuIcons";
 import { useStore } from "effector-react";
@@ -30,20 +29,70 @@ const SideMenu = () => {
   const { all } = useStore($accounts);
 
   const items = useMemo(() => {
+    const walletItems = (
+      <MenuItem
+        title={t("menu.wallet")}
+        link="/wallet"
+        icon={<WalletIcon />}
+        defaultExpanded
+      >
+        <MenuItem
+          sub
+          title={t("menu.accounts", { defaultValue: "Accounts" })}
+          link="/accounts"
+        />
+        <MenuItem
+          sub
+          title={t("menu.cards", { defaultValue: "Cards" })}
+          link="/cards"
+        />
+      </MenuItem>
+    );
+
+    const paymentsItems = (
+      <MenuItem
+        title={t("menu.payments", { defaultValue: "Payments" })}
+        link="/transfer"
+        icon={<CircleDiagramIcon />}
+        defaultExpanded
+      >
+        <MenuItem sub title={t("menu.topUp")} link="/topup" />
+        <MenuItem sub title={t("menu.transfer")} link="/transfer" />
+        <MenuItem sub title={t("menu.withdraw")} link="/withdraw" />
+        <MenuItem sub title={t("menu.exchange")} link="/exchange" />
+      </MenuItem>
+    );
+
+    const cryptoItems = (
+      <MenuItem
+        title={t("menu.crypto")}
+        link="/accounts"
+        icon={<BitcoinIcon />}
+        defaultExpanded
+      >
+        <MenuItem
+          sub
+          title={t("menu.assets", { defaultValue: "Assets" })}
+          link="/assets"
+        />
+        <MenuItem
+          sub
+          title={t("menu.transfer")}
+          link="/transfer"
+        />
+        <MenuItem
+          sub
+          title={t("menu.interest", { defaultValue: "Interest" })}
+          link="/staking"
+        />
+      </MenuItem>
+    );
+
     return (
       <ul>
-        {showWallet && (
-          <MenuItem
-            title={t("menu.wallet")}
-            link="/wallet"
-            icon={<WalletIcon />}
-          />
-        )}
-        <MenuItem
-          title={t("menu.crypto")}
-          link="/accounts"
-          icon={<BitcoinIcon />}
-        />
+        {showWallet && walletItems}
+        {paymentsItems}
+        {cryptoItems}
         {(deposits?.length > 0 || all.find((e) => e.type === 80)) && (
           <MenuItem
             title={t("menu.staking")}
@@ -57,27 +106,13 @@ const SideMenu = () => {
         )}
 
         <MenuItem
-          title={t("menu.payments")}
-          link="/transfer"
-          icon={<CircleDiagramIcon />}
-        >
-          <MenuItem sub title={t("menu.topUp")} link="/topup" />
-          <MenuItem sub title={t("menu.transfer")} link="/transfer" />
-          <MenuItem sub title={t("menu.withdraw")} link="/withdraw" />
-        </MenuItem>
-        <MenuItem
-          title={t("menu.exchange")}
-          link={`/exchange`}
-          icon={<ChartIcon />}
-        />
-        <MenuItem
           title={t("menu.history")}
           link="/all-history"
           icon={<CircleClockIcon />}
         />
       </ul>
     );
-  }, [showWallet, open, currentLanguage]);
+  }, [showWallet, open, currentLanguage, t, deposits, all]);
 
   return (
     <>
@@ -100,11 +135,11 @@ const SideMenu = () => {
         )}
       </aside>
       <aside className="side_menu">
-        <Link to={"/accounts"}>
+        {/* <Link to={"/accounts"}>
           <button type="button" className="logo">
             <CreditsLogoIcon />
           </button>
-        </Link>
+        </Link> */}
         <div className="menu_wrapper">{items}</div>
       </aside>
     </>

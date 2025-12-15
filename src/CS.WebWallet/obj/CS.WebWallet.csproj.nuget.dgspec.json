@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\credits\\src\\CS.WebWallet\\CS.WebWallet.csproj": {}
   },
   "projects": {
@@ -16,6 +17,23 @@
         "configFilePaths": [
           "C:\\credits\\NuGet.Config",
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "F:\\Programming\\credits\\src\\CS.WebWallet\\CS.WebWallet.csproj": {}
+  },
+  "projects": {
+    "F:\\Programming\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Programming\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj",
+        "projectName": "CS.WebWallet.Business",
+        "projectPath": "F:\\Programming\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj",
+        "packagesPath": "C:\\Users\\Legion\\.nuget\\packages\\",
+        "outputPath": "F:\\Programming\\credits\\src\\CS.WebWallet.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "F:\\Programming\\credits\\NuGet.Config",
+          "C:\\Users\\Legion\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 85ec8c6496e28f0512b67ec102a4b9ce705c8e7a
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -172,6 +190,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\credits\\src\\CS.WebWallet\\CS.WebWallet.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -184,6 +203,20 @@
         "configFilePaths": [
           "C:\\credits\\NuGet.Config",
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "F:\\Programming\\credits\\src\\CS.WebWallet\\CS.WebWallet.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Programming\\credits\\src\\CS.WebWallet\\CS.WebWallet.csproj",
+        "projectName": "CS.WebWallet",
+        "projectPath": "F:\\Programming\\credits\\src\\CS.WebWallet\\CS.WebWallet.csproj",
+        "packagesPath": "C:\\Users\\Legion\\.nuget\\packages\\",
+        "outputPath": "F:\\Programming\\credits\\src\\CS.WebWallet\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "F:\\Programming\\credits\\NuGet.Config",
+          "C:\\Users\\Legion\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 85ec8c6496e28f0512b67ec102a4b9ce705c8e7a
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -196,8 +229,13 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {
                 "projectPath": "C:\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj"
+=======
+              "F:\\Programming\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {
+                "projectPath": "F:\\Programming\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj"
+>>>>>>> 85ec8c6496e28f0512b67ec102a4b9ce705c8e7a
               }
             }
           }

@@ -1,57 +1,57 @@
-import React, { Suspense, useEffect } from "react";
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { useStore } from "effector-react";
-import SideMenu from "@components/SideMenu/SideMenu";
-import Header from "@components/Header";
+import React, { Suspense, useEffect } from "react"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
+import { useStore } from "effector-react"
+import SideMenu from "@components/SideMenu/SideMenu"
+import Header from "@components/Header"
 
-import ChatToggle from "@components/Chat/ChatToggle";
-import LayoutComments from "@components/LayoutComments";
-import ResponseModal from "@components/ResponseModal";
-import { $modalStore, closeModal } from "@store/modal";
-import Modal from "@components/Modal";
-import NewCardModal from "@compv2/Modals/NewCardModal";
-import { $cards, cardModalHidden, cardStatusModalHidden } from "@store/card";
-import Loader from "@components/Loader";
-import "./styles.scss";
-import CardStatusModal from "@compv2/Modals/CardStatusModal";
-import { $layoutStatus, layoutMounted } from "@store/protectedLayout.store";
-import { navigationReceived } from "@store/navigation.store";
-import ActivateCardModal from "@compv2/Modals/ActivateCardModal";
-import { $activateCard, activateCardModalHidden } from "@store/activateCard";
-import { $otp, otpModalHidden } from "@store/otp";
-import OtpCodeModal from "@compv2/Modals/OtpCodeModal";
-import { $kyc } from "@store/kyc/kyc";
-import { KycStatuses } from "@enums/kyc";
-import FooterV2 from "@compv2/FooterV2";
+import ChatToggle from "@components/Chat/ChatToggle"
+import LayoutComments from "@components/LayoutComments"
+import ResponseModal from "@components/ResponseModal"
+import { $modalStore, closeModal } from "@store/modal"
+import Modal from "@components/Modal"
+import NewCardModal from "@compv2/Modals/NewCardModal"
+import { $cards, cardModalHidden, cardStatusModalHidden } from "@store/card"
+import Loader from "@components/Loader"
+import "./styles.scss"
+import CardStatusModal from "@compv2/Modals/CardStatusModal"
+import { $layoutStatus, layoutMounted } from "@store/protectedLayout.store"
+import { navigationReceived } from "@store/navigation.store"
+import ActivateCardModal from "@compv2/Modals/ActivateCardModal"
+import { $activateCard, activateCardModalHidden } from "@store/activateCard"
+import { $otp, otpModalHidden } from "@store/otp"
+import OtpCodeModal from "@compv2/Modals/OtpCodeModal"
+import { $kyc } from "@store/kyc/kyc"
+import { KycStatuses } from "@enums/kyc"
+import FooterV2 from "@compv2/FooterV2"
 
 const ProtectedLayout: React.FC = () => {
-  const { cardModal, cardStatusModal } = useStore($cards);
-  const { activateCardModalShown } = useStore($activateCard);
-  const { visible, body } = useStore($modalStore);
-  const { visible: otpVisible } = useStore($otp);
-  const { loaded } = useStore($layoutStatus);
-  const { email, phone } = useStore($kyc);
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
+  const { cardModal, cardStatusModal } = useStore($cards)
+  const { activateCardModalShown } = useStore($activateCard)
+  const { visible, body } = useStore($modalStore)
+  const { visible: otpVisible } = useStore($otp)
+  const { loaded } = useStore($layoutStatus)
+  const { email, phone } = useStore($kyc)
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     if (loaded === false) {
-      layoutMounted();
+      layoutMounted()
     }
-  }, [loaded]);
+  }, [loaded])
 
   useEffect(() => {
-    navigationReceived(navigate);
-  }, [navigate]);
+    navigationReceived(navigate)
+  }, [navigate])
 
   useEffect(() => {
     if (email?.status === KycStatuses.Created.id && pathname !== "/kyc/mail") {
-      navigate("/kyc/mail");
+      navigate("/kyc/mail")
     }
     if (phone?.status === KycStatuses.Created.id && pathname !== "/kyc/phone") {
-      navigate("/kyc/phone");
+      navigate("/kyc/phone")
     }
-  }, [pathname, email, phone]);
+  }, [pathname, email, phone])
 
   return (
     <Suspense>
@@ -60,10 +60,10 @@ const ProtectedLayout: React.FC = () => {
           {loaded === false && <Loader />}
           {loaded && (
             <>
-              <SideMenu />
+              <Header />
 
               <div className="body">
-                <Header />
+                <SideMenu />
                 <div className="content">
                   <LayoutComments />
 
@@ -101,7 +101,7 @@ const ProtectedLayout: React.FC = () => {
         <FooterV2 />
       </div>
     </Suspense>
-  );
-};
+  )
+}
 
-export default ProtectedLayout;
+export default ProtectedLayout
