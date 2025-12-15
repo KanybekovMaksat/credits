@@ -9,6 +9,9 @@ import SmsVerification from "./SmsVerification";
 import BlueFilledButton from "@compv2/Buttons/BlueFilledButton";
 import Checkbox from "@compv2/Inputs/Checkbox";
 
+import profileIcon from "../../static/icons/profile.png";
+import bankIcon from "../../static/icons/bank.png";
+
 import "./login.scss";
 
 import { $login, getMe, loginRequested } from "@store/auth";
@@ -107,22 +110,6 @@ const Login: React.FC = (): JSX.Element => {
     }
   };
 
-  const BuildingIcon = () => (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M2 18H18V20H2V18Z" fill="currentColor" />
-      <path
-        d="M2 0H18V18H2V0ZM4 2V16H8V2H4ZM10 2V16H16V2H10Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-
   const GoogleIcon = () => (
     <svg
       width="24"
@@ -191,7 +178,7 @@ const Login: React.FC = (): JSX.Element => {
             }`}
             onClick={() => setAccountType("personal")}
           >
-            <BuildingIcon />
+            <img src={profileIcon} alt="profile icon" />
             <span>For Personal</span>
           </button>
           <button
@@ -201,8 +188,8 @@ const Login: React.FC = (): JSX.Element => {
             }`}
             onClick={() => setAccountType("business")}
           >
-            <BuildingIcon />
-            <span>For Business</span>
+            <img src={bankIcon} alt="bank icon" />
+            <div>For Business</div>
           </button>
         </div>
       )}
@@ -241,7 +228,7 @@ const Login: React.FC = (): JSX.Element => {
                 {!loginDisabled && (
                   <>
                     <BlueFilledButton
-                      style={{fontSize: "14px"}}
+                      style={{ fontSize: "14px" }}
                       type="submit"
                       disabled={!email || !agg || !!emailError}
                       text={t("Continue")}

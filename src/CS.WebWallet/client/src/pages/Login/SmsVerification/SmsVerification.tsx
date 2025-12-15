@@ -114,6 +114,7 @@ const SmsVerification: FC<SmsVerificationProps> = ({ method }) => {
         text={t("Confirm")}
         isLoading={loading}
         disabled={!code || code.length !== 6}
+        style={{fontSize: "16px"}}
       />
 
       {timer > 0 ? (

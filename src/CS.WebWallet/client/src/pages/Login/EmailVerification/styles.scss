@@ -1,0 +1,147 @@
+@use "../../../var";
+
+.email-verification-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #ffffff;
+
+  .verification-container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .verification-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media all and (max-width: 640px) {
+      padding: 24px;
+    }
+
+    .back-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      color: var.$cs_gray2;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+
+      svg {
+        width: 20px;
+        height: 20px;
+        color: currentColor;
+      }
+
+      &:hover {
+        color: var.$cs_blue;
+      }
+    }
+
+    .verification-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .verification-subtitle {
+      font-size: 16px;
+      color: var.$cs_gray3;
+      margin: 0;
+      padding: 0;
+      line-height: 24px;
+    }
+
+    .code-input-wrapper {
+      width: 100%;
+
+      .code-input {
+        width: 100%;
+        height: 50px;
+        padding: 0 16px;
+        border: 1px solid var.$cs_gray5;
+        border-radius: 8px;
+        font-size: 16px;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.2s;
+        background: #f8f8f8;
+
+        &:focus {
+          border-color: var.$cs_blue;
+          background: #ffffff;
+        }
+
+        &::placeholder {
+          color: var.$cs_gray4;
+        }
+      }
+    }
+
+    .timer-text {
+      text-align: center;
+      font-size: 14px;
+      color: var.$cs_gray3;
+      margin-top: 8px;
+    }
+
+    .resend-button {
+      background: transparent;
+      border: none;
+      color: var.$cs_blue;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0;
+      text-align: center;
+      transition: color 0.2s;
+      margin-top: 8px;
+
+      &:hover {
+        color: var.$cs_blue_light;
+      }
+    }
+  }
+
+  .app-download-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+  }
+}
