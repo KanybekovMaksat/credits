@@ -1,22 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\web-wallet\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {}
+    "C:\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\web-wallet\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {
+    "C:\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\web-wallet\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj",
+        "projectUniqueName": "C:\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj",
         "projectName": "CS.WebWallet.Business",
-        "projectPath": "C:\\Users\\user\\Desktop\\web-wallet\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\web-wallet\\src\\CS.WebWallet.Business\\obj\\",
+        "projectPath": "C:\\credits\\src\\CS.WebWallet.Business\\CS.WebWallet.Business.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\credits\\src\\CS.WebWallet.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\Desktop\\web-wallet\\NuGet.Config",
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\credits\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -41,7 +40,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -164,26 +163,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[9.0.11, 9.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.11, 9.0.11]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.11, 9.0.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

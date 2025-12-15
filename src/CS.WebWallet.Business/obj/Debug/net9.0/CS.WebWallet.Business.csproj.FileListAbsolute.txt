@@ -22,3 +22,16 @@ C:\Users\user\Desktop\web-wallet\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.W
 C:\Users\user\Desktop\web-wallet\src\CS.WebWallet.Business\obj\Debug\net9.0\refint\CS.WebWallet.Business.dll
 C:\Users\user\Desktop\web-wallet\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.pdb
 C:\Users\user\Desktop\web-wallet\src\CS.WebWallet.Business\obj\Debug\net9.0\ref\CS.WebWallet.Business.dll
+C:\credits\src\CS.WebWallet.Business\bin\Debug\net9.0\CS.WebWallet.Business.deps.json
+C:\credits\src\CS.WebWallet.Business\bin\Debug\net9.0\CS.WebWallet.Business.dll
+C:\credits\src\CS.WebWallet.Business\bin\Debug\net9.0\CS.WebWallet.Business.pdb
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.csproj.AssemblyReference.cache
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.AssemblyInfoInputs.cache
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.AssemblyInfo.cs
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.csproj.CoreCompileInputs.cache
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.sourcelink.json
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.dll
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\refint\CS.WebWallet.Business.dll
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\CS.WebWallet.Business.pdb
+C:\credits\src\CS.WebWallet.Business\obj\Debug\net9.0\ref\CS.WebWallet.Business.dll
