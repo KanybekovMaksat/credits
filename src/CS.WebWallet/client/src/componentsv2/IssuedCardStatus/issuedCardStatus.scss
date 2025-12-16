@@ -1,4 +1,4 @@
-@use 'src/var';
+@use "../../var";
 
 .issued-cards-status {
   .green { color: var.$cs_green}

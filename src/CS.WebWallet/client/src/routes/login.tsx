@@ -5,6 +5,7 @@ import Branch from "branch-sdk";
 import Loader from "@components/Loader";
 import LoginLayout from "@components/Layouts/LoginLayout";
 import Login from "@pages/Login";
+import EmailVerification from "@pages/Login/EmailVerification";
 
 const loginRoutes: RouteObject[] = [
   {
@@ -62,6 +63,7 @@ const loginRoutes: RouteObject[] = [
     children: [
       { index: true, path: "", element: <Login /> },
       { path: "/login", element: <Login /> },
+      { path: "/login/verify", element: <EmailVerification /> },
     ],
   },
 ];

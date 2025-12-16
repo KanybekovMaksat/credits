@@ -1,4 +1,4 @@
-@use "src/var";
+@use "../../../var.scss";
 
 .kyc-selfie-page {
   width: 600px;
@@ -7,16 +7,16 @@
   padding: 30px 30px;
   box-sizing: border-box;
   box-shadow: var.$cs_box-shadow;
-  .selfie-upload{
+  .selfie-upload {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .photo-group{
+    .photo-group {
       width: 100%;
       padding: 10px 10px;
     }
   }
-  .button-group{
+  .button-group {
     display: flex;
     justify-content: center;
     button {

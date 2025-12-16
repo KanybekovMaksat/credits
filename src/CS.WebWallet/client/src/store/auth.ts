@@ -69,6 +69,7 @@ const $login = combine({
 
 export {
   $login,
+  $authData,
   setMe,
   getMe,
   loginRequested,
