@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS.WebWallet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaafc500b3ddb0ffb9c125899e9964e0dc19a9b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85ec8c6496e28f0512b67ec102a4b9ce705c8e7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS.WebWallet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS.WebWallet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
